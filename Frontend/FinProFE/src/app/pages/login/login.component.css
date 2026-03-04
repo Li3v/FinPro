@@ -1,5 +1,10 @@
 .btn-login {
   align-self: flex-end;
+  border-color: #660000;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-right: 7px;
+  margin-top: 10px;
 }
 
 .btn-login:hover {
@@ -8,8 +13,16 @@
   color: white;
 }
 
-.errorMessage{
+.errorMessage {
   margin-left: 25px;
+}
+
+input {
+  border-color: #660000;
+  border-radius: 5px;
+  font-size: 20px;
+  margin: 5px;
+  
 }
 
 .login-container {
@@ -25,7 +38,7 @@
   width: 300px;
 }
 
-.login-form{
+.login-form {
   align-items: center;
   display: flex;
   flex-direction: column;

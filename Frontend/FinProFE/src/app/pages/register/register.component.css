@@ -1,0 +1,53 @@
+.btn-register {
+  align-self: flex-end;
+  border-color: #660000;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-right: 25px;
+  margin-top: 10px;
+}
+
+.btn-register:hover {
+  background: #660000;
+  border-color: white;
+  color: white;
+}
+
+.errorMessage {
+  margin-left: 25px;
+}
+
+input {
+  border-color: #660000;
+  border-radius: 5px;
+  font-size: 20px;
+  margin: 5px;
+  
+}
+
+.register-container {
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  height: 400px;
+  justify-content: center;
+  width: 300px;
+}
+
+.register-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-page {
+  align-items: center;
+  background: radial-gradient(circle at top, #660000, #061526);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}

@@ -1,8 +1,6 @@
 <div class="login-page">
   <div class="login-container">
     <form class="login-form" (ngSubmit)="login()">
-      <label
-        >Username
         <input
           type="text"
           [(ngModel)]="username"
@@ -10,9 +8,6 @@
           placeholder="Username"
           required
         />
-      </label>
-      <label
-        >Password
         <input
           type="text"
           [(ngModel)]="password"
@@ -20,7 +15,6 @@
           placeholder="Password"
           required
         />
-      </label>
       <button class="btn-login">Login</button>
     </form>
     <p class="register">
