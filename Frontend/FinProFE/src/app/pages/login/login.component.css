@@ -1,0 +1,40 @@
+.btn-login {
+  align-self: flex-end;
+}
+
+.btn-login:hover {
+  background: #660000;
+  border-color: white;
+  color: white;
+}
+
+.errorMessage{
+  margin-left: 25px;
+}
+
+.login-container {
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  height: 400px;
+  justify-content: center;
+  width: 300px;
+}
+
+.login-form{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page {
+  align-items: center;
+  background: radial-gradient(circle at top, #660000, #061526);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
