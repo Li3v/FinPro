@@ -2,11 +2,10 @@
 
 namespace FinPro;
 
-public class DashboardService //: IDashboardService
+public class DashboardService : IDashboardService
 {
     private readonly AppDbContext _dbContext;
     public DashboardService(AppDbContext dbContext) { _dbContext = dbContext; }
-
 
     public async Task<SummaryDto> GetSummaryAsync(int userId, DateTime startDate, DateTime endDate)
     {
@@ -52,25 +51,25 @@ public class DashboardService //: IDashboardService
             .ToListAsync();
     }
 
-     public async Task<List<TrendDto>> GetTrendAsync(int userId, DateTime startDate, DateTime endDate)
-     {
-         return await _dbContext.Transactions
-             .Include(t => t.CategoryId)
-             .Where(t =>
-                 t.Category.UserId == userId &&
-                 t.Date >= startDate &&
-                 t.Date <= endDate)
-             .GroupBy(t => new { t.Date.Year, t.Date.Month })
-             .Select(g => new TrendDto
-             {
-                 Year = g.Key.Year,
-                 Month = g.Key.Month,
-                 Income = g.Where(t => t.Category.Type == 1).Sum(t => t.Amount),
-                 Expense = g.Where(t => t.Category.Type == 0).Sum(t => t.Amount)
-             })
-             .OrderBy(x => x.Year)
-             .ThenBy(x => x.Month)
-             .ToListAsync();
-     }
+    public async Task<List<TrendDto>> GetTrendAsync(int userId, DateTime startDate, DateTime endDate)
+    {
+        return await _dbContext.Transactions
+            .Include(t => t.CategoryId)
+            .Where(t =>
+                t.Category.UserId == userId &&
+                t.Date >= startDate &&
+                t.Date <= endDate)
+            .GroupBy(t => new { t.Date.Year, t.Date.Month })
+            .Select(g => new TrendDto
+            {
+                Year = g.Key.Year,
+                Month = g.Key.Month,
+                Income = g.Where(t => t.Category.Type == 1).Sum(t => t.Amount),
+                Expense = g.Where(t => t.Category.Type == 0).Sum(t => t.Amount)
+            })
+            .OrderBy(x => x.Year)
+            .ThenBy(x => x.Month)
+            .ToListAsync();
+    }
 
 }

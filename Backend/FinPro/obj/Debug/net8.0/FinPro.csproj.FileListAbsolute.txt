@@ -274,3 +274,4 @@ C:\Users\Liev\Desktop\FinPro\Backend\FinPro\obj\Debug\net8.0\refint\FinPro.dll
 C:\Users\Liev\Desktop\FinPro\Backend\FinPro\obj\Debug\net8.0\FinPro.pdb
 C:\Users\Liev\Desktop\FinPro\Backend\FinPro\obj\Debug\net8.0\FinPro.genruntimeconfig.cache
 C:\Users\Liev\Desktop\FinPro\Backend\FinPro\obj\Debug\net8.0\ref\FinPro.dll
+C:\Users\Liev\Desktop\FinPro\Backend\FinPro\obj\Debug\net8.0\FinPro.sourcelink.json

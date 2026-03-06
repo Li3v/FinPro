@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinPro.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260302143436_AddNavigationProperties")]
-    partial class AddNavigationProperties
+    [Migration("20260306183834_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

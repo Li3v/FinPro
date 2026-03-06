@@ -13,10 +13,13 @@ public class TransactionService
             Amount = request.Amount,
             Description = request.Description,
             Date = DateTime.Now,
-            CategoryId = request.CategoryId
+            CategoryId = request.CategoryId,
+            //Category = request.
+            
         };
         _dbContext.Add(transaction);
         _dbContext.SaveChanges();
         return transaction;
     }
+    //method to get the categoryName from somewhere
 }

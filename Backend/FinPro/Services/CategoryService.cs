@@ -23,4 +23,6 @@ public class CategoryService
         _dbContext.SaveChanges();
         return category;
     }
+
+    //method to check if category exists
 }

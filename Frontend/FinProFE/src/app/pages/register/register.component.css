@@ -3,7 +3,7 @@
   border-color: #660000;
   border-radius: 5px;
   font-size: 15px;
-  margin-right: 25px;
+  margin-right: 5px;
   margin-top: 10px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .errorMessage {
-  margin-left: 25px;
+  margin-left: 10px;
 }
 
 input {
@@ -24,6 +24,7 @@ input {
   margin: 5px;
   
 }
+
 
 .register-container {
   align-items: center;

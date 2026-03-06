@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace FinPro;
 
-[Authorize]
 [ApiController]
-[Route("dashboard")]
+[Route("api/[controller]")]
+[Authorize]
 public class DashboardController : ControllerBase
 {
     private readonly IDashboardService _dashboardService;
@@ -20,12 +20,12 @@ public class DashboardController : ControllerBase
     [HttpGet("summary")]
     public async Task<IActionResult> GetSummary(DateTime startDate, DateTime endDate)
     {
-        var summary = await _dashboardService
+        var result = await _dashboardService
             .GetSummaryAsync(GetCurrentUser(), startDate, endDate);
-        return Ok();
+        return Ok(result);
     }
 
-    [HttpGet("category-distribution")]
+    [HttpGet("categories")]
     public async Task<IActionResult> GetCategoryDistribution(DateTime startDate, DateTime endDate)
     {
         var result = await _dashboardService

@@ -24,6 +24,9 @@ export class RegisterComponent {
   ) {}
 
   register() {
+    if (!this.passwordMatchValidator()) {
+      return;
+    }
     this.authService
       .register(this.username, this.password, this.email)
       .subscribe({
@@ -35,5 +38,12 @@ export class RegisterComponent {
           this.error = err.error?.message || 'Registration failed';
         },
       });
+  }
+  passwordMatchValidator(): boolean {
+    if (this.password != this.confirmPassword) {
+      this.error = 'Passwords do not match!';
+      return false;
+    }
+    return true;
   }
 }

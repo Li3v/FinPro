@@ -1,0 +1,40 @@
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  height: 35px;
+}
+
+.btn-load-dashboards {
+}
+
+.btn-logOut {
+  margin-left: auto;
+}
+
+.dashboard-page {
+  background: radial-gradient(circle at top, #660000, #061526);
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  display: flex;
+  flex: 1;
+  height: 20px;
+  padding: 20px;
+}
+
+.dashboard-controls {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  justify-content: center;
+}
+
+input {
+  border-radius: 5px;
+  cursor: text;
+  font-size: 20px;
+  height: 30px;
+}
