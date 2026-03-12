@@ -14,7 +14,14 @@
 }
 
 .errorMessage {
-  margin-left: 25px;
+  margin-left: 5px;
+  font-size: small;
+}
+
+.cat {
+  border-radius: 10px;
+  height: 200px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -22,7 +29,6 @@ input {
   border-radius: 5px;
   font-size: 20px;
   margin: 5px;
-  
 }
 
 .login-container {

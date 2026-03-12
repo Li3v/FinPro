@@ -5,24 +5,35 @@ button {
   height: 35px;
 }
 
+.btn-left-panel {
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;
+  border-top: 0;
+  background: none;
+  color: white;
+  font-size: medium;
+  text-align: center;
+  width: 220px;
+}
+
 .btn-load-dashboards {
+  display: flex;
+  padding-top: 5px;
 }
 
 .btn-logOut {
   margin-left: auto;
 }
 
-.dashboard-page {
-  background: radial-gradient(circle at top, #660000, #061526);
-  display: flex;
-  min-height: 100vh;
-}
-
-.dashboard-container {
+.dashboard-container-nav {
+  border: 1px solid rgba(128, 128, 128, 0.3);
   display: flex;
   flex: 1;
   height: 20px;
   padding: 20px;
+  padding-top: 5px;
 }
 
 .dashboard-controls {
@@ -32,9 +43,30 @@ button {
   justify-content: center;
 }
 
+.dashboard-page {
+  background: radial-gradient(circle at top, #660000, #061526);
+  min-height: 100vh;
+}
+
+.left-panel {
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-bottom: 0;
+  border-top: 0;
+  color: white;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  width: 220px;
+}
+
 input {
   border-radius: 5px;
   cursor: text;
   font-size: 20px;
   height: 30px;
+}
+
+.welcome-message {
+  align-items: center;
+  color: white;
+  display: flex;
 }

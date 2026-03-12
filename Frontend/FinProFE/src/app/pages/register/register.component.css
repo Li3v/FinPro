@@ -13,8 +13,14 @@
   color: white;
 }
 
+.cat{
+  border-radius: 10px;
+  height: 180px;
+}
+
 .errorMessage {
   margin-left: 10px;
+  font-size: small;
 }
 
 input {
@@ -34,7 +40,7 @@ input {
   flex-direction: column;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
-  height: 400px;
+  height: 450px;
   justify-content: center;
   width: 300px;
 }

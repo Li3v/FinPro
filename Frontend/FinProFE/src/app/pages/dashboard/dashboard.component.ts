@@ -9,11 +9,12 @@ import { DashboardService } from '../../services/dashboard.service';
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-  summary: any;
   categories: any;
-  trend: any;
-  startDate: string = '';
+  currentUser: any;
   endDate: string = '';
+  startDate: string = '';
+  summary: any;
+  trend: any;
 
   constructor(
     private authService: AuthService,
@@ -21,32 +22,38 @@ export class DashboardComponent {
     private dashboardService: DashboardService,
   ) {}
 
+  loadDashboard() {
+    const params = {
+      startDate: this.startDate,
+      endDate: this.endDate,
+    };
+
+    this.dashboardService
+      .getSummary(this.startDate, this.endDate)
+      .subscribe((data) => {
+        this.summary = data;
+      });
+
+    this.dashboardService
+      .getCategoryDistribution(this.startDate, this.endDate)
+      .subscribe((data) => {
+        this.categories = data;
+      });
+
+    this.dashboardService
+      .getTrend(this.startDate, this.endDate)
+      .subscribe((data) => {
+        this.trend = data;
+      });
+  }
+
   logOut() {
     this.authService.logOut();
     this.router.navigate(['/']);
   }
 
- /* ngOnInit(): void {
-    this.loadDashboard();
-  }*/
-
-  loadDashboard() {
-
-    const params = {
-      startDate: this.startDate,
-      endDate: this.endDate
-    }
-
-    this.dashboardService.getSummary(this.startDate, this.endDate).subscribe((data) => {
-      this.summary = data;
-    });
-
-    this.dashboardService.getCategoryDistribution(this.startDate, this.endDate).subscribe((data) => {
-      this.categories = data;
-    });
-
-    this.dashboardService.getTrend(this.startDate, this.endDate).subscribe((data) => {
-      this.trend = data;
-    });
+  ngOnInit(): void {
+   // this.loadDashboard();
+    this.currentUser = this.authService.getUserName();
   }
 }
