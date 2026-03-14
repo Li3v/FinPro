@@ -1,0 +1,18 @@
+<div class="summary-container">
+
+  <div class="card income">
+    <h3>Income</h3>
+    <p>Income: {{ summary?.totalIncome | currency }}</p>
+  </div>
+
+  <div class="card expense">
+    <h3>Expenses</h3>
+    <p>Expense: {{ summary?.totalExpense | currency }}</p>
+  </div>
+
+  <div class="card balance">
+    <h3>Balance</h3>
+    <p>Balance: {{ summary?.balance | currency }}</p>
+  </div>
+
+</div>

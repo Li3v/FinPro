@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CategoryDistribution } from '../models/category-distribution.model';
+import { Trend } from '../models/trend.model';
+import { Summary } from '../models/summary.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +12,7 @@ export class DashboardService {
   constructor(private http: HttpClient) {}
 
   getSummary(startDate: string, endDate: string) {
-    return this.http.get(`${this.api}/summary`, {
+    return this.http.get<Summary>(`${this.api}/summary`, {
       params: {
         startDate: startDate,
         endDate: endDate,
@@ -18,7 +21,7 @@ export class DashboardService {
   }
 
   getCategoryDistribution(startDate: string, endDate: string) {
-    return this.http.get(`${this.api}/categories`, {
+    return this.http.get<CategoryDistribution[]>(`${this.api}/categories`, {
       params: {
         startDate: startDate,
         endDate: endDate,
@@ -27,7 +30,7 @@ export class DashboardService {
   }
 
   getTrend(startDate: string, endDate: string) {
-    return this.http.get(`${this.api}/trend`, {
+    return this.http.get<Trend[]>(`${this.api}/trend`, {
       params: {
         startDate: startDate,
         endDate: endDate,

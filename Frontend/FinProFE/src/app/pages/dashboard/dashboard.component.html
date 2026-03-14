@@ -2,17 +2,27 @@
   <div class="dashboard-container-nav">
     <h3 class="welcome-message">Welcome, {{ currentUser }}</h3>
     <div class="dashboard-controls">
-      <input type="date" ngModel="startDate" />
-      <input type="date" ngModel="endDate" />
+      <input type="date" [(ngModel)]="startDate" />
+      <input type="date" [(ngModel)]="endDate" />
       <button class="btn-load-dashboards" (click)="loadDashboard()">
         Load Dashboards
       </button>
     </div>
     <button class="btn-logOut" (click)="logOut()">Logout</button>
   </div>
-  <div class="left-panel">
-    <button class="btn-left-panel">New Category</button>
-    <button class="btn-left-panel">New Transaction</button>
-    <button class="btn-left-panel">View data</button>
+
+  <div class="dashboard-body">
+    <div class="left-panel">
+      <button class="btn-left-panel">New Category</button>
+      <button class="btn-left-panel">New Transaction</button>
+      <button class="btn-left-panel">View data</button>
+    </div>
+    <div class="graphics">
+      <app-summary-cards [summary]="summary"> </app-summary-cards>
+
+      <app-category-chart [categories]="categories"> </app-category-chart>
+
+      <app-trend-chart [trend]="trend"> </app-trend-chart>
+    </div>
   </div>
 </div>

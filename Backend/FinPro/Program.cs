@@ -15,7 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(Options =>
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<TransactionService>();
-builder.Services.AddScoped<DashboardService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 
 
 builder.Services.AddSwaggerGen(options =>

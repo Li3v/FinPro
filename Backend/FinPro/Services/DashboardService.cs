@@ -10,7 +10,7 @@ public class DashboardService : IDashboardService
     public async Task<SummaryDto> GetSummaryAsync(int userId, DateTime startDate, DateTime endDate)
     {
         var transactions = await _dbContext.Transactions
-        .Include(t => t.CategoryId)
+        .Include(t => t.Category)
         .Where(t =>
             t.Category.UserId == userId &&
             t.Date >= startDate &&
@@ -36,7 +36,7 @@ public class DashboardService : IDashboardService
     public async Task<List<CategoryDto>> GetCategoryDistributionAsync(int userId, DateTime startDate, DateTime endDate)
     {
         return await _dbContext.Transactions
-            .Include(t => t.CategoryId)
+            .Include(t => t.Category)
             .Where(t =>
                 t.Category.UserId == userId &&
                 t.Date >= startDate &&
@@ -54,7 +54,7 @@ public class DashboardService : IDashboardService
     public async Task<List<TrendDto>> GetTrendAsync(int userId, DateTime startDate, DateTime endDate)
     {
         return await _dbContext.Transactions
-            .Include(t => t.CategoryId)
+            .Include(t => t.Category)
             .Where(t =>
                 t.Category.UserId == userId &&
                 t.Date >= startDate &&
