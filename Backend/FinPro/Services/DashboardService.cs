@@ -28,7 +28,8 @@ public class DashboardService : IDashboardService
         return new SummaryDto
         {
             totalIncome = totalIncome,
-            TotalExpense = totalExpense
+            TotalExpense = totalExpense,
+            Balance = totalIncome - totalExpense
         };
     }
 

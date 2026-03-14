@@ -7,4 +7,14 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class CategoryChartComponent {
   @Input() categories: any;
+  chartOptions = {
+  responsive: true,
+  plugins: {
+    legend: {
+      labels: {
+        color: 'white'
+      }
+    }
+  }
+};
 }

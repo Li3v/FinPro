@@ -43,14 +43,12 @@ export class DashboardComponent {
     this.dashboardService
       .getSummary(this.startDate, this.endDate)
       .subscribe((data) => {
-        console.log('summary:', data);
         this.summary = data;
       });
 
     this.dashboardService
       .getCategoryDistribution(this.startDate, this.endDate)
       .subscribe((data) => {
-        console.log('categories:', data);
         const labels = data.map((x: any) => x.categoryName);
         const values = data.map((x: any) => x.total);
 
@@ -63,7 +61,6 @@ export class DashboardComponent {
     this.dashboardService
       .getTrend(this.startDate, this.endDate)
       .subscribe((data) => {
-        console.log('trend:', data);
         const labels = data.map((x: any) => `${x.month}/${x.year}`);
         const income = data.map((x: any) => x.income);
         const expense = data.map((x: any) => x.expense);
